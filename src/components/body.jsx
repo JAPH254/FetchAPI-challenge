@@ -16,16 +16,22 @@ const UniversitySearch = () => {
 
   return (
     < >
-    <div style={{gap:"2rem"}}>
+    <div style={{backgroundColor:"#f6dbfa",minHeight:"480px",width:"1300px",}}>
+    <div style={{gap:"4rem"}}>
+      
+      <br />
       <input type="text" placeholder="Enter a country" value={country} onChange={(e) => setCountry(e.target.value)}/>
       <button onClick={handleSearch}>Search</button>
-</div>
-      <div>
+      </div>
+      <div style={{display:'flex',flexDirection:"column"}}>
         {universities.map((university) => (
-          <li key={university.name}>
-            {university.name} 
-          </li>
+          <p key={university.name}>
+          <b> university name:</b> {university.name} <br />
+           <b> Country located:</b> {university.country} <br />
+           <b> University Domain: </b>{university.domains[0]} <br /><br />
+          </p>
         ))}
+      </div>
       </div>
     </>
   );
